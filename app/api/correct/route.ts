@@ -1,6 +1,6 @@
 // app/api/correct/route.ts
 //
-// 자막 교정 API (POST). STT 자막을 받아 OOP 전공용어 오인식을 교정해 돌려준다.
+// 자막 교정 API (POST). STT 자막을 받아 정보통신공학 전공용어 오인식을 교정해 돌려준다.
 // 핵심 로직은 ./correct 의 correctSubtitle 에 있다(테스트 스크립트와 공유).
 //
 // 입력:  { "text": "오늘은 다양성에 대해 배웁니다" }

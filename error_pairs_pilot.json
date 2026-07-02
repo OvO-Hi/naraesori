@@ -1,0 +1,830 @@
+[
+  {
+    "canonical": "호스트 (Host)",
+    "variant": "소울스 호스트",
+    "context": "센더 소울스 호스트에서 데스네이션 호스트까지",
+    "lecture": 0
+  },
+  {
+    "canonical": "애플리케이션 계층 (Applications layer)",
+    "variant": "어플리케이션 레이어",
+    "context": "5계층은 어플리케이션 레이어로 되어 있으면서",
+    "lecture": 0
+  },
+  {
+    "canonical": "HTTP (HyperText Transfer Protocol)",
+    "variant": "HTTP",
+    "context": "웹 다큐먼트를 다운로드하면 HTTP를 부르겠지만",
+    "lecture": 0
+  },
+  {
+    "canonical": "데이터 링크 (Data Link)",
+    "variant": "데이터 링크 레이어",
+    "context": "데이터 링크 레이어, 그래서 결과적으로",
+    "lecture": 0
+  },
+  {
+    "canonical": "비트 퍼 세컨드 (Bits Per Second (bps))",
+    "variant": "테라비피엑스",
+    "context": "44 테라비피엑스까지 나와",
+    "lecture": 0
+  },
+  {
+    "canonical": "트래픽 (Traffic)",
+    "variant": "트래픽",
+    "context": "점점 이게 트래픽이 늘어나니까",
+    "lecture": 0
+  },
+  {
+    "canonical": "QoS (QoS (Quality of Service))",
+    "variant": "퀄리티 서비스의 퀄리티",
+    "context": "퀄리티 서비스의 퀄리티를 요구하게 됐다는 거야",
+    "lecture": 0
+  },
+  {
+    "canonical": "비트 퍼 세컨드 (Bits Per Second (bps))",
+    "variant": "BPS",
+    "context": "최소한 50메가 BPS를 서비스해 줄 수 있어야 된다",
+    "lecture": 0
+  },
+  {
+    "canonical": "실시간 스트리밍 (Real-time Streaming)",
+    "variant": "스트리밍",
+    "context": "저장되어 있는 스트리밍을 받아오는 거는 의외로 스트리밍은 같은 스트리밍이지만",
+    "lecture": 0
+  },
+  {
+    "canonical": "텔레메트리",
+    "variant": "리모트 미러",
+    "context": "근데 리모트 미러를 하면 이제는 그건 직접 갈 필요가 없어. 멀리서도 측정이 돼. 근데 스마트 미러 하면 리모트 미러 플러스",
+    "lecture": 0
+  },
+  {
+    "canonical": "스마트폰",
+    "variant": "스마트폰",
+    "context": "여기서 말하는 디바이스 이게 이렇게 스마트폰이 제일 많지",
+    "lecture": 0
+  },
+  {
+    "canonical": "M2M (Machine to Machine)",
+    "variant": "M2M",
+    "context": "그래서 페블렛 많이 갖고 M2M이라고 하는 건 센서를 이용한 거지",
+    "lecture": 0
+  },
+  {
+    "canonical": "호스트 (Host)",
+    "variant": "호스트",
+    "context": "여기 애들을 우리가 지난 시간에 내가 막 얘기해준 용어 중에 호스트에 해당하는 애들이야 호스트",
+    "lecture": 0
+  },
+  {
+    "canonical": "스테이션 (Station)",
+    "variant": "스테이션",
+    "context": "터미널 이렇게 부를 수도 있고 스테이션 이런 용어로도 말하고",
+    "lecture": 0
+  },
+  {
+    "canonical": "텔레메트리 (Telemetry)",
+    "variant": "텔레메터리",
+    "context": "인컬 텔레메터리 서비스 같은 게 있어",
+    "lecture": 0
+  },
+  {
+    "canonical": "커넥티드 카 (Connected Car)",
+    "variant": "스마트 CD",
+    "context": "여기 이제 관심 있는 사람 봐봐. 스마트 CD 같은 거.",
+    "lecture": 0
+  },
+  {
+    "canonical": "모빌리티",
+    "variant": "모빌리티",
+    "context": "이 모바일 모빌리티가 엄청나게 자리를 잡기 시작했어",
+    "lecture": 0
+  },
+  {
+    "canonical": "IoT",
+    "variant": "IoT",
+    "context": "For Internet of Things, IoT 서비스를 하기 위한 거다",
+    "lecture": 0
+  },
+  {
+    "canonical": "LPWA (Low-Power Wide-Area)",
+    "variant": "파플라",
+    "context": "왜냐하면 파플라하니까 여러분이 알았으면 좋겠어요",
+    "lecture": 0
+  },
+  {
+    "canonical": "IoT (Internet of Things)",
+    "variant": "인터넷 오브 띵스",
+    "context": "IoT 인터넷 오브 띵스 뭐 별의별 띵에다가 다 인터넷에 연결시키겠다고 하는데",
+    "lecture": 0
+  },
+  {
+    "canonical": "LPWA",
+    "variant": "LPWAN",
+    "context": "나온 게 LPWA야 요 LPWAN 그럼 망을 의미하고",
+    "lecture": 0
+  },
+  {
+    "canonical": "NB-IoT",
+    "variant": "네로 밴드 IoT",
+    "context": "셀룰라 쪽은 이렇게 네로 밴드 IoT 이렇게 붙였어",
+    "lecture": 0
+  },
+  {
+    "canonical": "LoRA",
+    "variant": "로라",
+    "context": "셀룰라 넌 셀룰라 쪽에 있는 게 요거야 로라 로라라고 익숙하게 들어봤을 수도 있어 롱 렌지 라디오라고 하는 기술이야",
+    "lecture": 0
+  },
+  {
+    "canonical": "5G",
+    "variant": "5G",
+    "context": "바깥으로 나가면 5G는 지난번 어디까지 나온다고 그랬어?",
+    "lecture": 0
+  },
+  {
+    "canonical": "고속 무선",
+    "variant": "빠른",
+    "context": "뭐가? 와이파이 6E 익스텐션 내 속도는 걔가 두 개의 주파수 대역을 쓰거든?",
+    "lecture": 0
+  },
+  {
+    "canonical": "의사결정 인텔리전스 (Decision Intelligence)",
+    "variant": "디시전 인텔리전스",
+    "context": "디시전 인텔리전스 이거는 디시전, 사람이 내린 디시전이",
+    "lecture": 0
+  },
+  {
+    "canonical": "생성형 AI (Generative AI)",
+    "variant": "제너라이티브 AI",
+    "context": "제너라이티브 AI 이게 R&D의 사이클에 많은 영향을 줬다",
+    "lecture": 0
+  },
+  {
+    "canonical": "생성형 AI (Generative AI)",
+    "variant": "제너라이티브 AI",
+    "context": "제너라이티브 AI 이게 R&D의 사이클에 많은 영향을 줬다",
+    "lecture": 0
+  },
+  {
+    "canonical": "실시간 피드백 (Real-time Feedback)",
+    "variant": "리얼타임 피드백",
+    "context": "리얼타임 피드백을 지속적으로 얻어서 바꿔주는",
+    "lecture": 0
+  },
+  {
+    "canonical": "실시간 피드백",
+    "variant": "리얼타임 피드백",
+    "context": "리얼타임 피드백을 지속적으로 얻어서 바꿔주는",
+    "lecture": 0
+  },
+  {
+    "canonical": "CES (Consumer Electronics Show)",
+    "variant": "CS",
+    "context": "여러분 CS라는 거 하는 거 들어봤지?",
+    "lecture": 0
+  },
+  {
+    "canonical": "로보틱스 (Robotics)",
+    "variant": "로보틱스 로봇공학",
+    "context": "이 때 AI하고 로보틱스 접목한 거 요게 많아 이게 정의선 회장이 로보틱스 로봇공학이잖아",
+    "lecture": 0
+  },
+  {
+    "canonical": "스트리밍 TV 플랫폼 (Streaming TV Platform (TCL Roku TV))",
+    "variant": "소면놈이",
+    "context": "여기서 소면놈이 아침에 인피니트 테스트 해주고",
+    "lecture": 0
+  },
+  {
+    "canonical": "서버 (Server)",
+    "variant": "서버",
+    "context": "처음에는 서버 몇 개 두고 있다가 안 되겠다 너무너무 많이 필요해 서버가 엄청 많아 서버 팜이지",
+    "lecture": 0
+  },
+  {
+    "canonical": "호스팅 데이터 센터 (Hosting Data Center)",
+    "variant": "데이터 센터",
+    "context": "서버 팜이지 이게 뭐 데이터 센터야",
+    "lecture": 0
+  },
+  {
+    "canonical": "하이브리드 클라우드 (Hybrid Cloud)",
+    "variant": "클라우드",
+    "context": "저기 클라우드에 있는 어플리케이션 쓰면 안 될까",
+    "lecture": 0
+  },
+  {
+    "canonical": "엔터프라이즈 LAN/WAN (Enterprise LAN/WAN (Local Area Network / Wide Area Network))",
+    "variant": "랜",
+    "context": "기업이 자기 랜을 갖고 있잖아",
+    "lecture": 0
+  },
+  {
+    "canonical": "코어 라우터 (Core Router)",
+    "variant": "라우터",
+    "context": "옛날에는 라우터는 다 시스코에서 만들었어",
+    "lecture": 0
+  },
+  {
+    "canonical": "네트워크 계층 (Network Layer)",
+    "variant": "네더번 네트워크",
+    "context": "얘는 네더번 네트워크 그러니까 얘는 네트워크 회사야",
+    "lecture": 0
+  },
+  {
+    "canonical": "Wi-Fi 액세스 포인트 (Wi-Fi Access Point)",
+    "variant": "액세스 포인트",
+    "context": "액세스 포인트도 통신사가 3개가 일관되어서 이 오픈 로밍을 지원하잖아",
+    "lecture": 0
+  },
+  {
+    "canonical": "존재 지점 (Point of Presence (POP))",
+    "variant": "팝플러",
+    "context": "5G가 팝플러하게 되려면 이 와이파이 6를 담고 가야 돼",
+    "lecture": 0
+  },
+  {
+    "canonical": "데이터 센터",
+    "variant": "데이터 센터",
+    "context": "프라이빗 클라우드는 대부분 데이터 센터 말해",
+    "lecture": 0
+  },
+  {
+    "canonical": "서버",
+    "variant": "서버",
+    "context": "그 서버를 운영하고 우리가 신호 얘기도 할 건데",
+    "lecture": 0
+  },
+  {
+    "canonical": "NaaS (Network as a Service)",
+    "variant": "NAS",
+    "context": "NAS는 올 필요 없어. 물론 장비는 대여해야 되니까",
+    "lecture": 0
+  },
+  {
+    "canonical": "SASE (Secure Access Service Edge)",
+    "variant": "Secure Access Service Edge",
+    "context": "Secure Access Service Edge라는 걸 내가 본 적이 있는데요. 이거 되게 얘랑 비슷한 것 같아요",
+    "lecture": 0
+  },
+  {
+    "canonical": "워크스테이션",
+    "variant": "파워 워크 그룹",
+    "context": "더 넓어졌고 파워 워크 그룹. 점점 간개인이 일하면서",
+    "lecture": 0
+  },
+  {
+    "canonical": "오케스트레이션 및 자동화",
+    "variant": "점착 네트워크 서비스",
+    "context": "점착 네트워크 서비스 쪽으로 더 많이 커진다 이거야",
+    "lecture": 0
+  },
+  {
+    "canonical": "호스트",
+    "variant": "소울스 호스트",
+    "context": "소울스 호스트. 데스티니션 호스트야 지금.",
+    "lecture": 0
+  },
+  {
+    "canonical": "네트워크 통합",
+    "variant": "통합",
+    "context": "4G부터 통합이 됐다",
+    "lecture": 0
+  },
+  {
+    "canonical": "음성 트래픽",
+    "variant": "보이스",
+    "context": "보이스는 이쪽 망으로 가고 데이터는 이쪽 망으로 가",
+    "lecture": 0
+  },
+  {
+    "canonical": "호스트",
+    "variant": "소울스 호스트",
+    "context": "소울스 호스트. 데스티니션 호스트야 지금.",
+    "lecture": 0
+  },
+  {
+    "canonical": "송신자 (Transmitter)",
+    "variant": "트랜스미스",
+    "context": "샌드라는 표면보다 좀 더 디테일한 건 트랜스미스라는 표현을 쓰자",
+    "lecture": 0
+  },
+  {
+    "canonical": "송신자 (Transmitter)",
+    "variant": "트랜스미터",
+    "context": "여기 트랜스미터가 있고 여기 TX",
+    "lecture": 0
+  },
+  {
+    "canonical": "아날로그 신호 (Analog signal)",
+    "variant": "아날로그 신호",
+    "context": "여기에 있는 모든 장비들이 아날로그 신호를 처리한다는 뜻이야",
+    "lecture": 0
+  },
+  {
+    "canonical": "모뎀 (Modem (Modulator-Demodulator))",
+    "variant": "모뎀",
+    "context": "여기 중간에 모뎀을 거쳐서 아날로그를 바꿔주고",
+    "lecture": 0
+  },
+  {
+    "canonical": "변조 (Modulation)",
+    "variant": "모듈레이션",
+    "context": "모듈레이션을 하고 여기서는 디 모듈레이션을 하겠지",
+    "lecture": 0
+  },
+  {
+    "canonical": "반송 주파수 (Carrier Frequency)",
+    "variant": "캐리어",
+    "context": "이 가운데를 캐리어 이렇게 얘기해",
+    "lecture": 0
+  },
+  {
+    "canonical": "라인 코딩 (Line Coding)",
+    "variant": "라인 인코딩",
+    "context": "우리 비트를 라인 인코딩을 하면 베이스 밴드 시그널이 나와",
+    "lecture": 0
+  },
+  {
+    "canonical": "패리티 체크 (Parity Check)",
+    "variant": "패러티 체크",
+    "context": "싱글 패러티 체크를 쓰는 경우는 이렇게 하나만 한 줄만 딱 오잖아",
+    "lecture": 9
+  },
+  {
+    "canonical": "짝수 패리티 (Even Parity)",
+    "variant": "이븐 패러티 체크",
+    "context": "이븐 패러티 체크를 쓰는데 지금 전체 보니까 1이 3개야",
+    "lecture": 9
+  },
+  {
+    "canonical": "패리티 체크 (Parity Check)",
+    "variant": "패러디 체크",
+    "context": "이 패러디 체크 자체가.",
+    "lecture": 9
+  },
+  {
+    "canonical": "16비트 정렬 (16-bit Alignment)",
+    "variant": "알라인먼트",
+    "context": "16개의 비트씩 알라인먼트를 한다는 말이 그런 뜻이야",
+    "lecture": 9
+  },
+  {
+    "canonical": "1의 보수 (Ones Complement)",
+    "variant": "원스 컴플리멘트",
+    "context": "원스 컴플리멘트 에디션을 해",
+    "lecture": 9
+  },
+  {
+    "canonical": "올림수 (Carry)",
+    "variant": "캐리",
+    "context": "여기서 캐리가 생기면 다시 돌려서 한 번 더 계산해",
+    "lecture": 9
+  },
+  {
+    "canonical": "Wrapped-around Addition (Wrapped-around Addition)",
+    "variant": "원스 컴플리멘트 에디션",
+    "context": "원스 컴플리멘트 에디션을 해",
+    "lecture": 9
+  },
+  {
+    "canonical": "올림수 (Carry)",
+    "variant": "캐리",
+    "context": "16이 되는 순간 캐리가 올라가고 0이 되는 거야",
+    "lecture": 9
+  },
+  {
+    "canonical": "올림수 (Carry)",
+    "variant": "캐리",
+    "context": "하나 올라가고 1이 남지. 1이 올라갔지",
+    "lecture": 9
+  },
+  {
+    "canonical": "올림수 (Carry)",
+    "variant": "캐리",
+    "context": "캐리가 있으면 한 번 더 해 그랬더니 더 했어",
+    "lecture": 9
+  },
+  {
+    "canonical": "올림수 (Carry)",
+    "variant": "캐리",
+    "context": "캐리가 그치. 요렇게 됐을 때",
+    "lecture": 9
+  },
+  {
+    "canonical": "끝자리 올림 (End-around Carry)",
+    "variant": "캐리가 있으면 한 번 더 해",
+    "context": "캐리가 있으면 한 번 더 해 그랬더니 더 했어",
+    "lecture": 9
+  },
+  {
+    "canonical": "인터넷 체크섬 (Internet checksum)",
+    "variant": "책섬",
+    "context": "야 책섬 하지마. 그래갖고 빼버렸어",
+    "lecture": 9
+  },
+  {
+    "canonical": "인터넷 체크섬 (Internet checksum)",
+    "variant": "책섬",
+    "context": "뭐는 해? 책섬은 해줘. 걔는 헤더까지 전부다",
+    "lecture": 9
+  },
+  {
+    "canonical": "인터넷 체크섬 (Internet checksum)",
+    "variant": "책섬",
+    "context": "TCP는 이걸 한 다음에 코렉션도 해주지만 UDP는 그냥 책섬 그 디텍션만 하고 버려버려",
+    "lecture": 9
+  },
+  {
+    "canonical": "인터넷 체크섬 (Internet checksum)",
+    "variant": "인터넷 책섬",
+    "context": "얘의 리밋이 있어. 인터넷 책섬에.",
+    "lecture": 9
+  },
+  {
+    "canonical": "QoS 제어 (QoS Control (Quality of Service Control))",
+    "variant": "QoS",
+    "context": "그리고 QoS 이거 있잖아. 빠르게.",
+    "lecture": 9
+  },
+  {
+    "canonical": "인터넷 체크섬",
+    "variant": "인터넷 책상",
+    "context": "그래서 인터넷 책상 그렇게 두 가지를 못잡아",
+    "lecture": 9
+  },
+  {
+    "canonical": "패리티 검사",
+    "variant": "패러티책",
+    "context": "패러티책보다 인터넷 책상이 조금 나아",
+    "lecture": 9
+  },
+  {
+    "canonical": "16비트 정렬",
+    "variant": "16비트 알라인먼트",
+    "context": "16비트로 알라인먼트 했을 때 16비트 거리 사이에 있는",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스",
+    "variant": "프레임워크",
+    "context": "얘도 이제 프레임워크 똑같아",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스 (FCS (Frame Check Sequence))",
+    "variant": "프레임 책섬",
+    "context": "이 프레임 책섬이 돼야 되잖아",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스 (FCS (Frame Check Sequence))",
+    "variant": "프레임 책 시퀀스",
+    "context": "거꾸로 얘기하면 프레임 책 시퀀스를 다섯 비트를 쓰는 시스템이야",
+    "lecture": 9
+  },
+  {
+    "canonical": "전송 프레임 (Transmitted Frame T(n))",
+    "variant": "TN",
+    "context": "이거 전체를 RX가 받았을 때 걔도 알고 나도 아는 이 P 패턴으로 나누면",
+    "lecture": 9
+  },
+  {
+    "canonical": "오류 검출 코드 (Error-Detecting Code)",
+    "variant": "에러 딕텍션",
+    "context": "내가 에러 딕텍션을 하는 알고리즘을 만들 거 아니야",
+    "lecture": 9
+  },
+  {
+    "canonical": "모듈로-2 산술 (Modulo-2 Arithmetic)",
+    "variant": "모듈리오2에리스매트",
+    "context": "여기서 구현하려면 이 모듈리오2에리스매트. 에리스매트니까 더센, 뺄센, 나노센, 곱센 이거 연산.",
+    "lecture": 9
+  },
+  {
+    "canonical": "이진 나눗셈 (Binary Division)",
+    "variant": "Binary, Division",
+    "context": "곱센, 나노센은 Multiplication, Binary, Division하고 똑같아.",
+    "lecture": 9
+  },
+  {
+    "canonical": "배타적 논리합 (Exclusive-OR (XOR))",
+    "variant": "놀루예로로",
+    "context": "이거는 놀루예로로 하는 거야.",
+    "lecture": 9
+  },
+  {
+    "canonical": "모듈로-2 산술 (Modulo-2 Arithmetic)",
+    "variant": "모듈로2의 더센",
+    "context": "내가 지금 모듈로2의 더센이야",
+    "lecture": 9
+  },
+  {
+    "canonical": "올림수 (Carry)",
+    "variant": "올라가는 거",
+    "context": "더센인데 Without carry 버려. 올라가는 거 버려",
+    "lecture": 9
+  },
+  {
+    "canonical": "배타적 논리합 (Exclusive-OR (XOR))",
+    "variant": "exclusive over",
+    "context": "뭐하고 모양이 똑같지? 얘랑 얘랑 exclusive over",
+    "lecture": 9
+  },
+  {
+    "canonical": "모듈로 2 산술 (Modulo 2 arithmetic)",
+    "variant": "모듈2 arithmetic",
+    "context": "이 모듈2 arithmetic에서 더 쌤, 빼 쌤 하라고 하면",
+    "lecture": 9
+  },
+  {
+    "canonical": "XOR (Exclusive OR)",
+    "variant": "exclusive over",
+    "context": "같으면 0, 기억해. 같으면 0, 다르면 1. 이게 exclusive over잖아.",
+    "lecture": 9
+  },
+  {
+    "canonical": "좌측 시프트 (Left Shift)",
+    "variant": "쉬프트",
+    "context": "그걸 이쪽으로 왼쪽으로 5비트 쉬프트 해야 돼.",
+    "lecture": 9
+  },
+  {
+    "canonical": "나머지 (Remainder R(n-k))",
+    "variant": "M-K",
+    "context": "나머지가 M-K가 나머지가 나오면 그거를 다시 이 자리에",
+    "lecture": 9
+  },
+  {
+    "canonical": "제수 (Divisor (P))",
+    "variant": "디비저",
+    "context": "그 디비저 P로 나누기를 해",
+    "lecture": 9
+  },
+  {
+    "canonical": "좌측 시프트 (Left Shift)",
+    "variant": "쉬프트",
+    "context": "1, 1, 0, 1 하고 쉬프트를 했기 때문에",
+    "lecture": 9
+  },
+  {
+    "canonical": "모듈로 연산 (Modulo Operation)",
+    "variant": "모듈리틀 엘리스매틱",
+    "context": "모듈리틀 엘리스매틱이니까, 그치?",
+    "lecture": 9
+  },
+  {
+    "canonical": "제수 (Divisor (P))",
+    "variant": "디비저",
+    "context": "이 p를 보고 있으면 디비저를 보면 내가 몇 비트짜리 프레임 체크 시퀀스를 쓰는 시스템인지 알 수 있어야 된다",
+    "lecture": 9
+  },
+  {
+    "canonical": "x^0 항 (Constant Term (x^0 term))",
+    "variant": "x0",
+    "context": "얘가 x0 x0 이렇게 하고 x0에는 b0의 0 아니면 1이잖아",
+    "lecture": 9
+  },
+  {
+    "canonical": "더미 변수 (Dummy variable)",
+    "variant": "배리어블",
+    "context": "x를 배리어블로 하는 다항식으로 바꾸는 거",
+    "lecture": 9
+  },
+  {
+    "canonical": "좌측 시프트 (Left Shift)",
+    "variant": "쉬프트",
+    "context": "앞에 알고리즘에 따라서 우리가 그 쉬프트를 해줘야 되잖아",
+    "lecture": 9
+  },
+  {
+    "canonical": "좌측 시프트 (Left Shift)",
+    "variant": "쉬프트",
+    "context": "그 쉬프트를 해줘야 되잖아",
+    "lecture": 9
+  },
+  {
+    "canonical": "제수 (Divisor (P))",
+    "variant": "px",
+    "context": "여기서 지금 px가 없는데 px로 얘를 나눠서",
+    "lecture": 9
+  },
+  {
+    "canonical": "모듈로 연산 (Modulo Operation)",
+    "variant": "모듈러 연산",
+    "context": "똑같이 모듈러 연산으로 익스클루시브 오화를 하면 돼",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스 (FCS (Frame Check Sequence))",
+    "variant": "프레임체 시퀀스",
+    "context": "요게 결과는 프레임체 시퀀스 비트가 몇이냐?",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스 (FCS (Frame Check Sequence))",
+    "variant": "프레임트 시퀀스",
+    "context": "프레임트 시퀀스는 무엇인가 몇 비트라고 말 안 해줬어",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스 (FCS (Frame Check Sequence))",
+    "variant": "프레임트 시퀀스",
+    "context": "HDLC가 CRC할 때 쓰는 프레임트 시퀀스는 16비트야",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 검사 시퀀스 (FCS (Frame Check Sequence))",
+    "variant": "프레임트 시퀀스",
+    "context": "그 최 프레임트 시퀀스 사이즈야",
+    "lecture": 9
+  },
+  {
+    "canonical": "시프트 레지스터 (Shift Register)",
+    "variant": "쉬프트 레지스터",
+    "context": "쉬프트 레지스터란 건 그 다음 스텝으로 갈 때 값이 뭔가 이동을 해",
+    "lecture": 9
+  },
+  {
+    "canonical": "프레임 길이 (Frame Length)",
+    "variant": "프레임트 시퀀스 사이즈",
+    "context": "이게 프레임트 시퀀스 사이즈야 그러면 폴리노미를",
+    "lecture": 9
+  },
+  {
+    "canonical": "시퀀스 번호 (Sequence Number)",
+    "variant": "프레임 체인 시퀀스 넘버",
+    "context": "프레임 체인 시퀀스 넘버 만큼 비트 수만큼 쓴대",
+    "lecture": 9
+  },
+  {
+    "canonical": "FCS(프레임 검사 시퀀스)",
+    "variant": "프레임 체인 시퀀스",
+    "context": "몇 비트 프레임 체인 시퀀스를 쓰는 시스템이야?",
+    "lecture": 9
+  },
+  {
+    "canonical": "FCS(프레임 검사 시퀀스)",
+    "variant": "프레임 체크 시퀀스",
+    "context": "오비트 프레임 체크 시퀀스를 쓸 거니까",
+    "lecture": 9
+  },
+  {
+    "canonical": "시프트 레지스터",
+    "variant": "shift register",
+    "context": "이 파랑이가 1비트 레지스터야 shift register야 몇 개 있어",
+    "lecture": 9
+  },
+  {
+    "canonical": "XOR",
+    "variant": "익스클루시브 OR",
+    "context": "세 개의 익스클루시브 OR 게이트가 필요하겠지",
+    "lecture": 9
+  },
+  {
+    "canonical": "XOR 게이트 (XOR Gate (Exclusive OR Gate))",
+    "variant": "Exclusive gate",
+    "context": "여기 뒤에다가 Exclusive gate를 넣어",
+    "lecture": 9
+  },
+  {
+    "canonical": "XOR 게이트 (XOR Gate (Exclusive OR Gate))",
+    "variant": "Exclusive와 Gate",
+    "context": "모든 Exclusive와 Gate에 다 같이 넣어주면 돼요",
+    "lecture": 9
+  },
+  {
+    "canonical": "시프트 레지스터 (Shift Register)",
+    "variant": "원비트 레지스터",
+    "context": "이 원비트 레지스터에 다 0000을 넣는 거야",
+    "lecture": 9
+  },
+  {
+    "canonical": "타이머 (Timer)",
+    "variant": "타이머",
+    "context": "보낸 애가 뭔가 타이머 갖고 있어야겠지",
+    "lecture": 9
+  },
+  {
+    "canonical": "ARQ (Automatic Repeat reQuest)",
+    "variant": "백월드 에러 코렉션",
+    "context": "원 저작자가 다시 보내면 백월드 에러 코렉션 방법이야",
+    "lecture": 9
+  },
+  {
+    "canonical": "데이터 블록 (Data Block)",
+    "variant": "블록",
+    "context": "이거를 쪼개. 블록으로. 이렇게 쪼개서 한 블록씩을 인코딩을 해서 보내",
+    "lecture": 9
+  },
+  {
+    "canonical": "코드워드 (codeword)",
+    "variant": "코드 월드",
+    "context": "두 비트짜리 데이터. 한마디 말해서 프레임이 쫙 있는데 두 비트씩 끊어. 그래서 두 비트를 여기 코드 월드는 다섯 비트",
+    "lecture": 9
+  },
+  {
+    "canonical": "코드워드 (codeword)",
+    "variant": "코드 월드",
+    "context": "00을 말이지 코드 월드 N비트짜리야. 결국 보내는 거네.",
+    "lecture": 9
+  },
+  {
+    "canonical": "k비트 워드 (k-bit word)",
+    "variant": "K비트짜리 블록",
+    "context": "블록은 K비트짜리 블록 있잖아. 여기 00 이거.",
+    "lecture": 9
+  },
+  {
+    "canonical": "코드워드 (codeword)",
+    "variant": "코드월드",
+    "context": "다섯 비트짜리 코드월드를 내가 쓰겠다는",
+    "lecture": 9
+  },
+  {
+    "canonical": "추가 비트 (Additional Bits)",
+    "variant": "에디셔널리",
+    "context": "에디셔널리 더 보낸 비트수 이렇게 비율로 세어야 돼",
+    "lecture": 9
+  },
+  {
+    "canonical": "해밍 거리 (Hamming distance)",
+    "variant": "해밍 디스턴스",
+    "context": "해밍 디스턴스는 그냥 아주 단순한 연산이야",
+    "lecture": 9
+  },
+  {
+    "canonical": "XOR (Exclusive OR)",
+    "variant": "익스클루시브 오아",
+    "context": "익스클루시브 오아에서 나온 결과 중에 1이 들어가 있는 거",
+    "lecture": 9
+  },
+  {
+    "canonical": "블록 코딩 (Block Coding)",
+    "variant": "블록 인코딩",
+    "context": "이게 지금 보는 블록 인코딩 방법",
+    "lecture": 9
+  },
+  {
+    "canonical": "코드워드 (codeword)",
+    "variant": "코드월드",
+    "context": "이 테이블에 각각의 코드월드의 이 5비트짜리하고",
+    "lecture": 9
+  },
+  {
+    "canonical": "코드워드 (codeword)",
+    "variant": "코드월드",
+    "context": "그렇게 코드월드 테이블을 만든 경우에는",
+    "lecture": 9
+  },
+  {
+    "canonical": "이중 비트 오류 (Double-bit Error)",
+    "variant": "더블",
+    "context": "디스턴스 두 개 있는 것들이 그걸 또 더블로 나와",
+    "lecture": 9
+  },
+  {
+    "canonical": "코드워드 (codeword)",
+    "variant": "코드월드",
+    "context": "2의 5승 중에 코드월드에 쓴 네 개 빼고 28개",
+    "lecture": 9
+  },
+  {
+    "canonical": "최소 해밍 거리 (Minimum Hamming Distance)",
+    "variant": "미니멈 해밍 디스턴스",
+    "context": "이 블록코딩에 사용한 코드월드 테이블에 해밍 디스턴스는 미니멈 해밍 디스턴스는 3입니다",
+    "lecture": 9
+  },
+  {
+    "canonical": "비트율 (Bit Rate)",
+    "variant": "BPS",
+    "context": "초당 예를 들어서 뭐 1메가 BPS를 보내고",
+    "lecture": 9
+  },
+  {
+    "canonical": "비트 퍼 세컨드 (Bits Per Second (bps))",
+    "variant": "BPS",
+    "context": "1메가 BPS로 보내면 1메가 BPS 속도가 나겠어",
+    "lecture": 9
+  },
+  {
+    "canonical": "Mbps",
+    "variant": "메가 BPS",
+    "context": "1메가 BPS로 보내면 1메가 BPS 속도가 나겠어?",
+    "lecture": 9
+  },
+  {
+    "canonical": "데이터 전송률",
+    "variant": "데이터 레이트",
+    "context": "응용이 1Mbps 데이터 레이트를 원한다",
+    "lecture": 9
+  },
+  {
+    "canonical": "오버헤드",
+    "variant": "블록 코딩",
+    "context": "이 블록 코딩을 쓰는 순간 어떻게 바뀌겠어?",
+    "lecture": 9
+  }
+]

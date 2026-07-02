@@ -18,14 +18,17 @@ interface Sample {
   expect: string;
 }
 
+// 정보통신공학 도메인 사전(naraesori_terms)의 실제 오류쌍
 const SAMPLES: Sample[] = [
-  { text: "오늘은 다양성에 대해 배웁니다", expect: "다양성 → 다형성" },
-  { text: "캡술화는 데이터를 숨기는 것입니다", expect: "캡술화 → 캡슐화" },
+  { text: "센더 소울스 호스트에서 데스티니션 호스트까지 전달됩니다", expect: "source host / destination host 관련 교정" },
+  { text: "고백에는 ARQ 방식으로 재전송합니다", expect: "고백에는 → Go-Back-N" },
+  { text: "이런 경우 큐, EU, ING 딜레이가 커집니다", expect: "큐, EU, ING 딜레이 → Queueing delay" },
+  { text: "네로 밴드 IoT는 저전력 통신에 쓰입니다", expect: "네로 밴드 IoT → NB-IoT" },
   { text: "오늘 날씨가 좋습니다", expect: "교정 없음 (changes 빈 배열)" },
 ];
 
 async function main(): Promise<void> {
-  console.log("자막 교정 스모크 테스트 — 샘플 3개\n");
+  console.log(`자막 교정 스모크 테스트 — 샘플 ${SAMPLES.length}개\n`);
 
   for (let i = 0; i < SAMPLES.length; i++) {
     const { text, expect } = SAMPLES[i];
