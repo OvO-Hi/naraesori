@@ -14,6 +14,7 @@
 // ⚠️ /api/* route, SpeakBar, chunker.ts 는 건드리지 않는다(호출/재사용만).
 
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import type { Lecture } from "@/lib/mock-lectures";
 import { chunkAudioFile } from "@/lib/audio/chunker";
 import { startMicRecorder, type MicRecorderHandle } from "@/lib/audio/mic-recorder";
@@ -26,6 +27,16 @@ import {
   type TranscriptCaption,
 } from "@/lib/pipeline/transcribe-client";
 import { SpeakBar } from "./SpeakBar";
+
+// PDF 뷰어는 pdf.js(브라우저 전용) → SSR 끄고 동적 로드.
+const PdfViewer = dynamic(() => import("./PdfViewer").then((m) => m.PdfViewer), {
+  ssr: false,
+  loading: () => (
+    <div className="grid min-h-[40dvh] place-items-center rounded-2xl border border-border bg-card text-sm text-muted-foreground">
+      뷰어 불러오는 중…
+    </div>
+  ),
+});
 
 type Mode = "file" | "live" | "replay";
 
@@ -99,10 +110,11 @@ function renderCaption(c: LiveCaption) {
   return nodes;
 }
 
-export function LiveScreen({ lecture, onEnd, audioFile }: {
+export function LiveScreen({ lecture, onEnd, audioFile, pdfFile }: {
   lecture: Lecture;
   onEnd: (captions: TranscriptCaption[]) => void; // 강의 종료 시 누적 자막 전달(요약용)
   audioFile: File | null;
+  pdfFile: File | null; // 강의자료 PDF (없으면 mock 슬라이드)
 }) {
   const [mode, setMode] = useState<Mode>("file");
   const [captions, setCaptions] = useState<LiveCaption[]>([]);
@@ -398,31 +410,36 @@ export function LiveScreen({ lecture, onEnd, audioFile }: {
         </div>
       )}
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
-        {/* 좌: 강의 자료(슬라이드 목록, 정적) */}
-        <aside aria-label="강의 자료" className="order-2 lg:order-1">
-          <div className="rounded-2xl border border-border bg-card p-4">
-            <h2 className="text-sm font-bold text-foreground">{lecture.pdf}</h2>
-            <p className="mt-1 text-xs text-muted-foreground">슬라이드 {lecture.slides.length}장</p>
-            <ul className="mt-3 space-y-2">
-              {lecture.slides.map((s) => (
-                <li key={s.n}>
-                  <div className="rounded-xl border border-border bg-background p-3">
-                    <div className="flex items-center gap-2">
-                      <span className="grid h-10 w-14 shrink-0 place-items-center rounded-md bg-secondary text-xs font-bold text-foreground" aria-hidden>
-                        {s.n}
-                      </span>
-                      <p className="min-w-0 truncate text-sm font-semibold text-foreground">{s.title}</p>
+      {/* 2단: 왼쪽 PDF 강의자료 + 오른쪽 자막. 좁은 화면에선 세로로 쌓임(PDF 위, 자막 아래) */}
+      <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+        {/* 왼쪽: PDF 뷰어 (PDF 없으면 mock 슬라이드) */}
+        <div className="order-1">
+          {pdfFile ? (
+            <PdfViewer file={pdfFile} />
+          ) : (
+            <div className="rounded-2xl border border-border bg-card p-4">
+              <h2 className="text-sm font-bold text-foreground">강의자료</h2>
+              <p className="mt-1 text-xs text-muted-foreground">PDF 없음 · 예시 슬라이드</p>
+              <ul className="mt-3 space-y-2">
+                {lecture.slides.map((s) => (
+                  <li key={s.n}>
+                    <div className="rounded-xl border border-border bg-background p-3">
+                      <div className="flex items-center gap-2">
+                        <span className="grid h-10 w-14 shrink-0 place-items-center rounded-md bg-secondary text-xs font-bold text-foreground" aria-hidden>
+                          {s.n}
+                        </span>
+                        <p className="min-w-0 truncate text-sm font-semibold text-foreground">{s.title}</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
 
-        {/* 중앙: 실시간 자막 스트림 */}
-        <div className="order-1 lg:order-2">
+        {/* 오른쪽: 실시간 자막 + SpeakBar, 그 아래 교정 기록 */}
+        <div className="order-2 space-y-4">
           <div className="rounded-3xl border border-border bg-card shadow-sm">
             <div className="flex items-center justify-between border-b border-border px-5 py-3">
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
@@ -539,28 +556,28 @@ export function LiveScreen({ lecture, onEnd, audioFile }: {
 
             <SpeakBar />
           </div>
-        </div>
 
-        {/* 우: 교정 기록(실데이터) */}
-        <aside aria-label="교정 기록" className="order-3 space-y-4">
-          <div className="rounded-2xl border border-border bg-card p-4">
-            <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
-              <span aria-hidden>✨</span> 교정 기록
-            </h2>
-            <ul className="mt-3 space-y-2 text-sm text-foreground">
-              {allChanges.length === 0 && (
-                <li className="text-muted-foreground">전공 용어 오인식이 교정되면 여기에 표시돼요.</li>
-              )}
-              {allChanges.map((ch, i) => (
-                <li key={i} className="summary-in flex items-center gap-2 rounded-xl bg-leaf-soft/40 p-3">
-                  <s className="text-muted-foreground">{ch.from}</s>
-                  <span aria-hidden className="text-primary">→</span>
-                  <span className="font-semibold text-primary">{ch.to}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
+          {/* 교정 기록(실데이터) — 오른쪽 열 하단 */}
+          <aside aria-label="교정 기록">
+            <div className="rounded-2xl border border-border bg-card p-4">
+              <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
+                <span aria-hidden>✨</span> 교정 기록
+              </h2>
+              <ul className="mt-3 space-y-2 text-sm text-foreground">
+                {allChanges.length === 0 && (
+                  <li className="text-muted-foreground">전공 용어 오인식이 교정되면 여기에 표시돼요.</li>
+                )}
+                {allChanges.map((ch, i) => (
+                  <li key={i} className="summary-in flex items-center gap-2 rounded-xl bg-leaf-soft/40 p-3">
+                    <s className="text-muted-foreground">{ch.from}</s>
+                    <span aria-hidden className="text-primary">→</span>
+                    <span className="font-semibold text-primary">{ch.to}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   );

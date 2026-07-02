@@ -21,6 +21,7 @@ export default function LiveApp() {
   const [screen, setScreen] = useState<Screen>("start");
   const [lectureId, setLectureId] = useState<string>(LECTURES[0].id);
   const [audioFile, setAudioFile] = useState<File | null>(null); // 실시간 모드용 음원
+  const [pdfFile, setPdfFile] = useState<File | null>(null); // 강의자료 PDF
   const [liveCaptions, setLiveCaptions] = useState<TranscriptCaption[]>([]); // 강의 종료 시 요약에 넘김
   const [fontScale, setFontScale] = useState(1);
   const [highContrast, setHighContrast] = useState(false);
@@ -61,6 +62,8 @@ export default function LiveApp() {
               setLectureId={setLectureId}
               audioFile={audioFile}
               setAudioFile={setAudioFile}
+              pdfFile={pdfFile}
+              setPdfFile={setPdfFile}
               onStart={() => {
                 setLiveCaptions([]); // 새 강의 시작 → 이전 자막 초기화
                 setScreen("live");
@@ -71,6 +74,7 @@ export default function LiveApp() {
             <LiveScreen
               lecture={lecture}
               audioFile={audioFile}
+              pdfFile={pdfFile}
               onEnd={(caps) => {
                 setLiveCaptions(caps);
                 setScreen("summary");
