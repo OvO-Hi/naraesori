@@ -52,6 +52,19 @@ export function StartScreen({
           </span>
         </div>
 
+        {/* 데모용 강의자료·음원 (구글 드라이브) */}
+        <a
+          href="https://drive.google.com/drive/folders/1z3VukcR7MtwgvglJFPus3St1EI7vjChB?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="lift mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-secondary"
+        >
+          <span aria-hidden>📁</span> 데모용 강의자료·음원 받기
+        </a>
+        <p className="mt-2 text-center text-xs text-muted-foreground">
+          이 폴더의 PDF와 음원으로 실시간/파일 모드를 직접 시연해볼 수 있어요.
+        </p>
+
         <p className="eyebrow mt-8">강의자료 (PDF)</p>
         <div className="mt-3 rounded-2xl border border-border bg-background p-4">
           <input

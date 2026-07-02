@@ -44,6 +44,7 @@ import { useSession, signOut } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Header } from "@/components/naraesori/Header";
 import { Logo } from "@/components/naraesori/Logo";
+import { DashboardIntro } from "@/components/naraesori/DashboardIntro";
 import { Toaster } from "@/components/ui/sonner";
 import { PROFILE } from "@/lib/mock-dashboard";
 
@@ -172,6 +173,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         />
         <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6">{children}</main>
       </SidebarInset>
+      <DashboardIntro />
       <Toaster />
     </SidebarProvider>
   );
