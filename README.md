@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🕊️ 나래소리 (Naraesori)
 
-First, run the development server:
+### 청각장애 학생을 위한 실시간 강의 자막 · 요약 AI 학습 도우미
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**[🌐 서비스 바로가기 → naraesori.vercel.app](https://naraesori.vercel.app)**
+
+<sub>E-LIFETHON 2026 해커톤 · 이화여자대학교</sub>
+
+</div>
+
+---
+
+## 📌 프로젝트 소개
+
+**나래소리**는 청각장애 학생이 강의실에서 겪는 정보 접근의 어려움을 해결하기 위한 AI 학습 도우미입니다.
+
+교수님의 강의를 실시간으로 자막화하고, 전공 용어의 오인식을 자동으로 교정하며, 학생이 타이핑한 질문을 음성으로 강의실에 전달합니다. 기존에 '이화나래벗'(도우미 학생)이 수행하던 필기·전달 활동의 일부를 AI가 보조하는 것을 목표로 합니다.
+
+> **나래벗**: 청각장애 학생과 매칭되어 강의 내용을 필기하고 학습을 돕는 이화여대의 도우미 학생 제도
+
+---
+
+## ✨ 핵심 기능
+
+### 1. 실시간 강의 자막 (STT)
+- 마이크로 들어오는 강의 음성을 준실시간으로 자막화
+- 파일 재생 / 실시간 마이크 / 리플레이 3가지 모드 지원
+- 오버랩 청킹으로 단어 경계 인식률 개선
+
+### 2. ⭐ 전공 용어 RAG 교정
+- STT가 잘못 인식한 전공 용어를 벡터 검색(pgvector) 기반으로 자동 교정
+- 실제 정보통신공학 강의 데이터로 구축한 도메인 사전 적용
+- 예: `고백에는 ARQ → Go-Back-N ARQ`, `네로 밴드 IoT → NB-IoT`
+- 교정된 용어는 화면에서 하이라이트로 표시
+
+### 3. ⭐ 양방향 발화 (TTS + 음성 클로닝)
+- 청각장애 학생이 타이핑한 질문을 음성으로 합성해 강의실에 전달
+- 학생 본인의 목소리를 등록하면 그 목소리로 발화 (ElevenLabs 음성 복제)
+- 다단계 폴백: 내 목소리 → 기본 TTS → 브라우저 음성
+
+### 4. 강의자료(PDF) 연동
+- 강의 슬라이드를 자막과 나란히 표시
+- 강의자료 맥락을 활용한 용어 인식 강화
+
+### 5. 강의 종료 후 자동 요약
+- 한 줄 요약 · 핵심 포인트 · 전공 용어 정리 자동 생성
+- 원본 자막과 정리본을 함께 확인 가능
+
+### 6. 학습 대시보드
+- 시간표 · 다가오는 수업 · 과제 · 캘린더
+- 지난 강의 열람, 나래벗 프로필, 질문 내역 관리
+
+---
+
+## 🛠️ 기술 스택
+
+| 구분 | 기술 |
+|------|------|
+| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4, shadcn/ui |
+| **STT** | OpenAI Whisper |
+| **RAG 교정** | Supabase pgvector, OpenAI Embeddings (text-embedding-3-small), GPT-4o-mini |
+| **TTS** | OpenAI TTS, ElevenLabs (음성 복제) |
+| **인증** | NextAuth (Google OAuth) |
+| **PDF** | react-pdf (pdf.js) |
+| **배포** | Vercel |
+
+---
+
+## 🔬 RAG 교정 사전 구축 과정
+
+나래소리의 핵심은 **실제 강의 데이터로 만든 도메인 사전**입니다. 범용 STT가 전공 용어를 자주 틀리는 문제를, 정보통신공학 강의를 직접 분석해 구축한 교정 사전으로 해결했습니다.
+
+| 단계 | 한 일 | 산출물 |
+|------|-------|--------|
+| **1. 소스 수집** | 사이버캠퍼스 강의 25개 다운로드 → mp3 변환 | 강의 음원 25개 |
+| **2. STT 전사** | 10분 단위 청킹 → Whisper로 전사 (오류를 일부러 보존) | 전사본 25개 |
+| **3. 정답 용어 추출** | 강의자료 PDF 10개 → Claude Sonnet 비전 분석 | 정답 용어 4,078개 |
+| **4. 오류쌍 추출** | 용어 임베딩 → 전사본 벡터 검색 → LLM으로 실제 오인식 쌍 수집 | 오류쌍 1,998개 |
+| **5. 정규화** | 오탐 제거 → 표제어별 오류 변형 병합 | 표제어 678개 / 변형 1,424개 |
+| **6. DB 적재** | Supabase pgvector에 임베딩과 함께 적재 + 검색 함수 | DB 678행 |
+
+### 설계 포인트
+- **일부러 Whisper-1 사용**: 데모 STT와 같은 모델이라 오류 패턴이 실제 시연과 일치합니다. 더 정확한 모델을 쓰면 오히려 "틀린 예시"가 안 나와 사전 재료가 부족해집니다.
+- **STT에 정답 힌트를 주지 않음**: 오류를 남겨야 사전의 재료가 되기 때문입니다.
+- **오류쌍 추출 = 벡터 검색 + LLM**: 이 과정 자체가 런타임 교정 로직의 프로토타입입니다.
+
+### 런타임 동작
+```
+STT 자막 → 임베딩 → match_terms() 벡터 검색 → LLM 교정 → 하이라이트 표시
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 차별점
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **실제 강의 데이터 기반 RAG 사전**: 정보통신공학 강의 25개를 STT 처리하고 강의자료 PDF 10개를 분석해, 표제어 678개 · 오류 변형 1,424개의 전공 용어 사전을 직접 구축했습니다. (위 [RAG 구축 과정](#-rag-교정-사전-구축-과정) 참고)
+- **양방향 소통**: 단순히 듣는 것을 넘어, 학생이 본인의 목소리로 질문할 수 있습니다.
+- **접근성 우선 설계**: 고대비 모드, 글자 크기 조절 등 청각장애 학생을 위한 UI.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 실행 방법
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# 설치
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 개발 서버 실행
+npm run dev
+```
 
-## Deploy on Vercel
+`http://localhost:3000` 접속
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> 실행에는 OpenAI, Supabase, Google OAuth, ElevenLabs 등의 환경변수(`.env.local`)가 필요합니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 데모 체험
+서비스에 접속해 **"데모용 강의자료·음원 받기"** 버튼에서 샘플 PDF와 강의 음원을 받아 직접 시연해볼 수 있습니다. 실시간 모드가 어려운 환경에서는 **리플레이 모드**로 전체 흐름을 확인할 수 있습니다.
+
+---
+
+## 👥 팀
+
+**팀명:** (팀명 입력)
+
+| 이름 | 역할 |
+|------|------|
+| 이세연 (오리) | 팀장 · 개발 (풀스택) |
+| 김민서 | 기획 · 디자인 |
+| 우해든 | 기획 · 디자인 |
+
+---
+
+<div align="center">
+<sub>Made with 💚 for accessible learning</sub>
+</div>
