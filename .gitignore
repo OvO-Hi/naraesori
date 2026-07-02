@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+**/naraesori-a294bc198c82.json
+naraesori-a294bc198c82.json
+# 강의 음원/자료 (저작권 — 커밋 금지)
+*.mp3
+*.wav
+*.m4a
+Naraesori Live Notes/
+transcripts/
+pdfs/
+pdfs_test/
+pdf_analysis_test/
+scripts/stt-eval/input/
+scripts/stt-eval/output/
+
+# 데모 리플레이 데이터 (강의 내용 포함 — 판단해서)
+# public/demo/

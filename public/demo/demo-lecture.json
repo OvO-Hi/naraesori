@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "source": "sample (hand-authored) — scripts/build-demo-replay.ts 로 실제 파이프라인 결과로 교체 가능",
+    "lecture": "객체지향 프로그래밍 — 다형성",
+    "chunkSec": 8,
+    "durationSec": 48,
+    "generatedAt": null
+  },
+  "captions": [
+    {
+      "index": 0,
+      "startSec": 0,
+      "endSec": 8,
+      "original": "오늘은 다양성에 대해 배웁니다.",
+      "corrected": "오늘은 다형성에 대해 배웁니다.",
+      "changes": [{ "from": "다양성", "to": "다형성" }]
+    },
+    {
+      "index": 1,
+      "startSec": 8,
+      "endSec": 16,
+      "original": "다형성은 하나의 인터페이스로 여러 타입을 다루는 성질입니다.",
+      "corrected": "다형성은 하나의 인터페이스로 여러 타입을 다루는 성질입니다.",
+      "changes": []
+    },
+    {
+      "index": 2,
+      "startSec": 16,
+      "endSec": 24,
+      "original": "캡술화는 데이터를 숨기고 메서드로만 접근하게 합니다.",
+      "corrected": "캡슐화는 데이터를 숨기고 메서드로만 접근하게 합니다.",
+      "changes": [{ "from": "캡술화", "to": "캡슐화" }]
+    },
+    {
+      "index": 3,
+      "startSec": 24,
+      "endSec": 32,
+      "original": "상속을 쓰면 부모 클래스의 속성과 동작을 물려받습니다.",
+      "corrected": "상속을 쓰면 부모 클래스의 속성과 동작을 물려받습니다.",
+      "changes": []
+    },
+    {
+      "index": 4,
+      "startSec": 32,
+      "endSec": 40,
+      "original": "오버라이팅으로 자식이 부모 메서드를 재정의할 수 있어요.",
+      "corrected": "오버라이딩으로 자식이 부모 메서드를 재정의할 수 있어요.",
+      "changes": [{ "from": "오버라이팅", "to": "오버라이딩" }]
+    },
+    {
+      "index": 5,
+      "startSec": 40,
+      "endSec": 48,
+      "original": "정리하면 다형성, 캡슐화, 상속이 객체지향의 핵심입니다.",
+      "corrected": "정리하면 다형성, 캡슐화, 상속이 객체지향의 핵심입니다.",
+      "changes": []
+    }
+  ]
+}

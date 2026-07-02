@@ -1,0 +1,242 @@
+[
+  {
+    "term": "클래스",
+    "aliases": ["class"],
+    "misheard": ["클라스", "클래쓰", "클레스"],
+    "definition": "객체를 생성하기 위한 설계도 또는 틀"
+  },
+  {
+    "term": "객체",
+    "aliases": ["object", "오브젝트"],
+    "misheard": ["객채", "객제", "객테"],
+    "definition": "클래스로부터 만들어진 실체이자 데이터와 동작의 묶음"
+  },
+  {
+    "term": "인스턴스",
+    "aliases": ["instance"],
+    "misheard": ["인스탄스", "인스턴트", "인스턴즈"],
+    "definition": "클래스를 메모리에 실제로 생성한 객체"
+  },
+  {
+    "term": "상속",
+    "aliases": ["inheritance"],
+    "misheard": ["사속", "상속법", "상솟"],
+    "definition": "부모 클래스의 속성과 동작을 자식 클래스가 물려받는 것"
+  },
+  {
+    "term": "캡슐화",
+    "aliases": ["encapsulation", "인캡슐레이션"],
+    "misheard": ["캡술화", "갑슐화", "캡슐와", "캅슐화"],
+    "definition": "데이터와 메서드를 하나로 묶고 내부를 숨기는 것"
+  },
+  {
+    "term": "추상화",
+    "aliases": ["abstraction"],
+    "misheard": ["추상와", "추장화", "추상하", "추산화"],
+    "definition": "핵심 개념만 남기고 세부 구현을 감추는 것"
+  },
+  {
+    "term": "다형성",
+    "aliases": ["polymorphism", "폴리모피즘"],
+    "misheard": ["다양성", "다형 성", "다형색", "다형생"],
+    "definition": "하나의 인터페이스로 여러 타입을 다루는 성질"
+  },
+  {
+    "term": "인터페이스",
+    "aliases": ["interface"],
+    "misheard": ["인터패이스", "인터페이슨", "인터베이스"],
+    "definition": "구현 없이 동작 규약만 정의한 타입"
+  },
+  {
+    "term": "오버라이딩",
+    "aliases": ["overriding", "재정의"],
+    "misheard": ["오버라이팅", "오버로이딩", "오바라이딩"],
+    "definition": "부모의 메서드를 자식이 같은 시그니처로 다시 정의하는 것"
+  },
+  {
+    "term": "오버로딩",
+    "aliases": ["overloading", "중복정의"],
+    "misheard": ["오바로딩", "오버노딩", "오버로링"],
+    "definition": "같은 이름의 메서드를 매개변수 다르게 여러 개 정의하는 것"
+  },
+  {
+    "term": "생성자",
+    "aliases": ["constructor", "컨스트럭터"],
+    "misheard": ["생성짜", "생성자가", "샌성자"],
+    "definition": "객체가 생성될 때 자동 호출되어 초기화하는 특수 메서드"
+  },
+  {
+    "term": "소멸자",
+    "aliases": ["destructor", "디스트럭터"],
+    "misheard": ["소멸짜", "소면자", "소밀자"],
+    "definition": "객체가 사라질 때 호출되어 정리 작업을 하는 특수 메서드"
+  },
+  {
+    "term": "접근제어자",
+    "aliases": ["access modifier", "접근지정자"],
+    "misheard": ["접근제어짜", "접근재어자", "접근 제어자"],
+    "definition": "멤버의 공개 범위를 지정하는 키워드(public, private 등)"
+  },
+  {
+    "term": "메서드",
+    "aliases": ["method", "메소드"],
+    "misheard": ["메써드", "매서드", "메스드"],
+    "definition": "객체가 수행하는 동작을 정의한 함수"
+  },
+  {
+    "term": "필드",
+    "aliases": ["field", "멤버 변수"],
+    "misheard": ["피드", "필더", "필트"],
+    "definition": "객체가 가지는 데이터를 저장하는 변수"
+  },
+  {
+    "term": "정적 멤버",
+    "aliases": ["static member", "스태틱 멤버"],
+    "misheard": ["정적 맴버", "정적 멤바", "정직 멤버"],
+    "definition": "인스턴스가 아닌 클래스 자체에 속하는 멤버"
+  },
+  {
+    "term": "추상 클래스",
+    "aliases": ["abstract class"],
+    "misheard": ["추상 클라스", "추장 클래스", "추상 클래쓰"],
+    "definition": "직접 인스턴스화할 수 없고 상속을 전제로 하는 클래스"
+  },
+  {
+    "term": "가상 함수",
+    "aliases": ["virtual function", "버추얼 펑션"],
+    "misheard": ["가상 함쑤", "가상 함소", "가상함수"],
+    "definition": "자식에서 재정의를 허용해 런타임에 동적 바인딩되는 함수"
+  },
+  {
+    "term": "this 포인터",
+    "aliases": ["this pointer", "디스 포인터"],
+    "misheard": ["디스 포인터", "지스 포인터", "디쓰 포인터"],
+    "definition": "자기 자신 객체를 가리키는 참조"
+  },
+  {
+    "term": "참조",
+    "aliases": ["reference", "레퍼런스"],
+    "misheard": ["참소", "참조값", "참저"],
+    "definition": "객체의 주소를 가리켜 접근하게 하는 값"
+  },
+  {
+    "term": "다중상속",
+    "aliases": ["multiple inheritance"],
+    "misheard": ["다중 사속", "다중상속법", "다종상속"],
+    "definition": "한 클래스가 둘 이상의 부모를 상속받는 것"
+  },
+  {
+    "term": "컴포지션",
+    "aliases": ["composition", "합성"],
+    "misheard": ["컴포지숀", "콤포지션", "컴포디션", "캄포지션"],
+    "definition": "다른 객체를 포함해 기능을 조합하는 설계 방식"
+  },
+  {
+    "term": "의존성",
+    "aliases": ["dependency", "디펜던시"],
+    "misheard": ["의존석", "의존성이", "이존성"],
+    "definition": "한 모듈이 다른 모듈을 필요로 하는 관계"
+  },
+  {
+    "term": "결합도",
+    "aliases": ["coupling", "커플링"],
+    "misheard": ["결합또", "결합도가", "결한도"],
+    "definition": "모듈 간 서로 의존하는 정도"
+  },
+  {
+    "term": "응집도",
+    "aliases": ["cohesion", "코히전"],
+    "misheard": ["응집또", "응짐도", "응집도가"],
+    "definition": "한 모듈 내부 요소들이 하나의 책임에 집중된 정도"
+  },
+  {
+    "term": "SOLID 원칙",
+    "aliases": ["SOLID principles", "솔리드 원칙"],
+    "misheard": ["솔리드 원칙", "솔릿 원칙", "쏠리드 원칙"],
+    "definition": "객체지향 설계를 위한 다섯 가지 기본 원칙"
+  },
+  {
+    "term": "단일 책임 원칙",
+    "aliases": ["single responsibility principle", "SRP"],
+    "misheard": ["단일 책임 원칙", "다닐 책임 원칙", "단일 책김 원칙"],
+    "definition": "한 클래스는 하나의 책임만 가져야 한다는 원칙"
+  },
+  {
+    "term": "개방 폐쇄 원칙",
+    "aliases": ["open closed principle", "OCP"],
+    "misheard": ["개방 폐쇄 원칙", "개방 폐세 원칙", "개방 패쇄 원칙"],
+    "definition": "확장에는 열려 있고 변경에는 닫혀 있어야 한다는 원칙"
+  },
+  {
+    "term": "의존성 역전 원칙",
+    "aliases": ["dependency inversion principle", "DIP"],
+    "misheard": ["의존성 역전 원칙", "의존성 역전 원측", "이존성 역전 원칙"],
+    "definition": "구체가 아닌 추상에 의존해야 한다는 원칙"
+  },
+  {
+    "term": "디자인 패턴",
+    "aliases": ["design pattern"],
+    "misheard": ["디자인 페턴", "디자인 파턴", "디자인 팬턴"],
+    "definition": "자주 쓰이는 설계 문제의 재사용 가능한 해결책"
+  },
+  {
+    "term": "싱글턴",
+    "aliases": ["singleton", "싱글톤"],
+    "misheard": ["씽글턴", "싱글든", "신글턴"],
+    "definition": "인스턴스를 하나만 생성해 공유하는 패턴"
+  },
+  {
+    "term": "팩토리",
+    "aliases": ["factory", "팩토리 패턴"],
+    "misheard": ["팩터리", "팩도리", "팩토뤼", "팩토링"],
+    "definition": "객체 생성 로직을 별도 메서드나 클래스로 분리하는 패턴"
+  },
+  {
+    "term": "옵저버",
+    "aliases": ["observer", "옵서버"],
+    "misheard": ["옵져버", "옵저바", "업저버", "옵저벌"],
+    "definition": "상태 변화를 구독자들에게 자동 통지하는 패턴"
+  },
+  {
+    "term": "전략 패턴",
+    "aliases": ["strategy pattern"],
+    "misheard": ["전략 패턴", "전략 페턴", "절략 패턴"],
+    "definition": "알고리즘을 캡슐화해 런타임에 교체할 수 있게 하는 패턴"
+  },
+  {
+    "term": "어댑터",
+    "aliases": ["adapter", "어댑터 패턴"],
+    "misheard": ["어답터", "아댑터", "어대프터"],
+    "definition": "호환되지 않는 인터페이스를 맞춰주는 패턴"
+  },
+  {
+    "term": "제네릭",
+    "aliases": ["generic", "제너릭"],
+    "misheard": ["재네릭", "지네릭", "제내릭"],
+    "definition": "타입을 매개변수화해 재사용성을 높이는 기법"
+  },
+  {
+    "term": "열거형",
+    "aliases": ["enum", "이넘"],
+    "misheard": ["열거형", "열거영", "열그형"],
+    "definition": "이름이 있는 상수 집합을 정의하는 타입"
+  },
+  {
+    "term": "추상 메서드",
+    "aliases": ["abstract method"],
+    "misheard": ["추상 메써드", "추장 메서드", "추상 매서드"],
+    "definition": "선언만 있고 구현은 자식에게 맡기는 메서드"
+  },
+  {
+    "term": "게터",
+    "aliases": ["getter", "접근자"],
+    "misheard": ["게더", "게토", "겟터"],
+    "definition": "private 필드의 값을 읽어오는 메서드"
+  },
+  {
+    "term": "세터",
+    "aliases": ["setter", "설정자"],
+    "misheard": ["세더", "새터", "셋터"],
+    "definition": "private 필드의 값을 변경하는 메서드"
+  }
+]

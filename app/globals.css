@@ -1,26 +1,412 @@
+/* 원격 폰트 @import 는 CSS 규격상 다른 규칙보다 먼저 와야 하므로 최상단에 둔다.
+   Pretendard Variable — 한글 본문 가독성 + 접근성(--font-scale 로 배율 조정) */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css");
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant hc (&:is(.hc *));
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  /* 브랜드 원색 토큰 (팀 팔레트) */
+  --color-spruce: var(--spruce);
+  --color-fern: var(--fern);
+  --color-olive: var(--olive);
+  --color-parchment: var(--parchment);
+  --color-sun: var(--sun);
+  --color-mocha: var(--mocha);
+  /* Live Notes 유틸리티 호환용 별칭 (leaf/honey/forest/cream → 팀 팔레트로 재매핑) */
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-honey: var(--honey);
+  --color-honey-soft: var(--honey-soft);
+  --color-forest: var(--forest);
+  --color-cream: var(--cream);
+  /* shadcn sidebar 토큰 (Dark Spruce 사이드바) */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.875rem;
+  --font-scale: 1;
+
+  /* ── 팀 팔레트 (녹색 브랜드 + 노랑/베이지/갈색 가미) ─────────────────── */
+  --spruce: #214b14; /* Dark Spruce — 브랜드/헤더/primary */
+  --fern: #506d43; /* Fern — 보조 녹색 */
+  --olive: #8faa80; /* Muted Olive — secondary */
+  --parchment: #f4f2ec; /* Parchment — 베이지 base/background */
+  --sun: #eac747; /* Tuscan Sun — accent/노랑 하이라이트 */
+  --mocha: #403330; /* Deep Mocha — 텍스트/깊이(갈색) */
+
+  /* Live Notes 유틸리티가 참조하는 이름들을 팀 팔레트로 재매핑 */
+  --forest: var(--spruce); /* 딥 그린 → Dark Spruce */
+  --leaf: var(--fern); /* 세이지 → Fern */
+  --leaf-soft: #dde6d2; /* 옅은 올리브 틴트 */
+  --honey: var(--sun); /* 골드 → Tuscan Sun(노랑 강조) */
+  --honey-soft: #faf0c6; /* 옅은 노랑 — "교정된 단어" 하이라이트 배경 */
+  --cream: var(--parchment);
+
+  --background: var(--parchment);
+  --foreground: var(--mocha); /* 본문 텍스트 = Deep Mocha */
+  --card: #fcfbf7; /* 배경보다 살짝 밝은 웜 화이트 */
+  --card-foreground: var(--mocha);
+  --popover: #fcfbf7;
+  --popover-foreground: var(--mocha);
+
+  --primary: var(--spruce);
+  --primary-foreground: #f4f2ec;
+  --secondary: var(--olive); /* Muted Olive */
+  --secondary-foreground: #1e3311; /* 올리브 위 진한 스프루스 텍스트 */
+  --muted: #ece9df; /* 살짝 어두운 파치먼트 */
+  --muted-foreground: #6b6155; /* 모카-그레이 */
+  --accent: var(--sun); /* Tuscan Sun 노랑 */
+  --accent-foreground: var(--mocha); /* 노랑 위 갈색 텍스트(대비) */
+  --destructive: #c0392b;
+  --destructive-foreground: #fdf6f5;
+
+  --border: #ded9cc; /* 부드러운 파치먼트 보더 */
+  --input: #ded9cc;
+  --ring: var(--spruce);
+
+  /* ── 사이드바 = Dark Spruce, 텍스트/아이콘은 밝게 ─────────────────────────── */
+  --sidebar: var(--spruce); /* #214B14 */
+  --sidebar-foreground: #eaeee2; /* 밝은 파치먼트 계열 */
+  --sidebar-primary: var(--sun); /* Tuscan Sun 포인트 */
+  --sidebar-primary-foreground: var(--mocha);
+  --sidebar-accent: oklch(1 0 0 / 0.13); /* hover/active 밝은 오버레이 */
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: oklch(1 0 0 / 0.08); /* 하드라인 대신 옅게 — 경계는 그림자로 */
+  --sidebar-ring: var(--sun);
+
+  /* 저채도·다층 그림자(프리미엄 감) — 스프루스 그린 톤 */
+  --shadow-elev-1:
+    0 1px 2px oklch(0.3 0.04 150 / 0.04),
+    0 2px 6px oklch(0.3 0.04 150 / 0.05);
+  --shadow-elev-2:
+    0 1px 2px oklch(0.3 0.04 150 / 0.05),
+    0 6px 14px -6px oklch(0.3 0.04 150 / 0.10),
+    0 12px 28px -12px oklch(0.3 0.04 150 / 0.10);
+  --shadow-elev-3:
+    0 2px 4px oklch(0.3 0.04 150 / 0.06),
+    0 10px 22px -8px oklch(0.3 0.04 150 / 0.14),
+    0 22px 44px -18px oklch(0.3 0.04 150 / 0.16);
+}
+
+/* ── 고대비 모드(.hc) — 청각장애 학생 대상, 접근성 필수 유지 ───────────── */
+.hc {
+  --parchment: #ffffff;
+  --spruce: #14300b;
+  --mocha: #100d0c;
+  --background: #ffffff;
+  --foreground: #0d0b0a;
+  --card: #ffffff;
+  --card-foreground: #0d0b0a;
+  --popover: #ffffff;
+  --popover-foreground: #0d0b0a;
+  --muted-foreground: #2b2622;
+  --border: #2b2622;
+  --input: #2b2622;
+  --primary: #14300b;
+  --primary-foreground: #ffffff;
+  --secondary: #4a6b3a;
+  --secondary-foreground: #ffffff;
+  --accent: #b8860b; /* 진한 앰버 — 노랑 대비 강화 */
+  --accent-foreground: #ffffff;
+  --forest: #14300b;
+  --leaf: #2f5220;
+  --honey: #b8860b;
+  --honey-soft: #f2df9a;
+  --ring: #14300b;
+  /* 헤더 Fern 을 고대비에서 더 진하게(흰 텍스트 대비 확보) */
+  --fern: #23401a;
+  /* 사이드바: 더 진한 스프루스 + 순백 텍스트 + 진한 앰버 포인트 */
+  --sidebar: #0f240a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #d99a00;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: oklch(1 0 0 / 0.24);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: oklch(1 0 0 / 0.3);
+  --sidebar-ring: #d99a00;
+}
+
+/* 사이드바 결 다듬기: 아주 미묘한 세로 그라데이션 + 오른쪽 부드러운 그림자(딱딱한 경계 완화).
+   bg-sidebar(단색) 위에 그라데이션 이미지를 얹고, 하드 border 대신 그림자로 경계를 준다. */
+[data-sidebar="sidebar"] {
+  background-image: linear-gradient(
+    180deg,
+    oklch(1 0 0 / 0.035),
+    transparent 45%,
+    oklch(0 0 0 / 0.06)
+  );
+  box-shadow: 6px 0 28px -14px oklch(0.2 0.04 150 / 0.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-size: calc(16px * var(--font-scale));
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility watercolor-bg {
+  background-image:
+    radial-gradient(ellipse 60% 45% at 8% -5%, oklch(0.93 0.05 130 / 0.45), transparent 60%),
+    radial-gradient(ellipse 50% 38% at 102% 12%, oklch(0.95 0.06 85 / 0.38), transparent 65%),
+    radial-gradient(ellipse 80% 55% at 50% 110%, oklch(0.96 0.025 115 / 0.55), transparent 70%);
+}
+
+.hc .watercolor-bg {
+  background-image: none;
+}
+
+/* Refined uppercase eyebrow label */
+@utility eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+/* Subtle chips */
+@utility chip-honey {
+  background-color: var(--color-honey-soft);
+  color: oklch(0.42 0.09 70);
+  border: 1px solid oklch(0.86 0.07 82);
+  font-weight: 600;
+}
+
+@utility chip-leaf {
+  background-color: var(--color-leaf-soft);
+  color: var(--color-forest);
+  border: 1px solid oklch(0.86 0.05 130);
+  font-weight: 600;
+}
+
+@utility card-elev-1 {
+  box-shadow: var(--shadow-elev-1);
+}
+@utility card-elev-2 {
+  box-shadow: var(--shadow-elev-2);
+}
+@utility card-elev-3 {
+  box-shadow: var(--shadow-elev-3);
+}
+
+@utility recording-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background-color: oklch(0.58 0.16 150);
+  box-shadow: 0 0 0 0 oklch(0.58 0.16 150 / 0.55);
+  animation: pulse-dot 1.8s ease-out infinite;
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 oklch(0.58 0.16 150 / 0.55); opacity: 1; }
+  50% { opacity: 0.6; }
+  70% { box-shadow: 0 0 0 9px oklch(0.58 0.16 150 / 0); opacity: 1; }
+  100% { box-shadow: 0 0 0 0 oklch(0.58 0.16 150 / 0); opacity: 1; }
+}
+
+@keyframes wave-bar {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+@utility wave-bar {
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  margin: 0 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transform-origin: center;
+  animation: wave-bar 0.75s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes screen-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility screen-in {
+  animation: screen-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes summary-item-in {
+  from { opacity: 0; transform: translateY(-4px); max-height: 0; padding-top: 0; padding-bottom: 0; margin-top: 0; }
+  to { opacity: 1; transform: translateY(0); max-height: 220px; }
+}
+
+@utility summary-in {
+  animation: summary-item-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  overflow: hidden;
+}
+
+@keyframes correct-sweep {
+  0% { background-size: 0% 100%; }
+  100% { background-size: 100% 100%; }
+}
+
+/* "교정된 단어" 하이라이트: Tuscan Sun 옅은 노랑이 좌→우로 스윕 */
+@utility correct-word {
+  background-image: linear-gradient(to right, var(--color-honey-soft), var(--color-honey-soft));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  border-radius: 6px;
+  padding: 0.05em 0.3em;
+  animation: correct-sweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+}
+
+@keyframes word-defocus {
+  0% { filter: blur(0); opacity: 1; }
+  40% { filter: blur(2.5px); opacity: 0.6; }
+  100% { filter: blur(0); opacity: 1; }
+}
+
+@utility word-defocus {
+  animation: word-defocus 0.7s ease-in-out both;
+  display: inline-block;
+}
+
+@keyframes chip-pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@utility chip-pop {
+  animation: chip-pop 0.4s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  display: inline-flex;
+}
+
+@keyframes banner-in {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes banner-out {
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+@utility banner-in {
+  animation: banner-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@utility banner-out {
+  animation: banner-out 0.4s ease-in both;
+}
+
+@keyframes pin-bounce {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.25) rotate(-6deg); }
+  70% { transform: scale(0.96) rotate(2deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@utility pin-bounce {
+  animation: pin-bounce 0.55s ease-out both;
+  display: inline-block;
+}
+
+@utility lift {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.22s ease-out,
+              background-color 0.22s ease-out;
+}
+.lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elev-2);
+}
+.lift:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
+}
+
+@utility slide-card {
+  transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.4s ease-out,
+              box-shadow 0.4s ease-out,
+              transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.slide-card-active {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elev-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
